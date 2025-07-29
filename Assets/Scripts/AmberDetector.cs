@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class AmberDetector : MonoBehaviour
 {
-    //Make a public sprite renderer to get access to the sprite in the inspector
-    public SpriteRenderer spriteRenderer;
+    //Create a variable for  the sprite renderer class to get change the sprite renderer
+    SpriteRenderer detectRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //Get access to the SpriteRender component of the object the script is attatched to
+        detectRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -20,19 +21,22 @@ public class AmberDetector : MonoBehaviour
         Vector3 amberLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //use bool statement to run the code if the amber, followed by mouse position, is near the location of the machine in the scene. In this case the machine
-        //is past 1 in the x coordinates in the scene and above -2 in the y coordinates of the scene.
-        bool isAmberNearMachine = amberLocation.x > 1 && amberLocation.y > -2;
+        //is past -0.3 and behind 3 in the x coordinates of the scene.
+        bool isAmberNearMachineX = amberLocation.x > -0.3 && amberLocation.x < 3;
+        //use bool statement to run the code if the amber, followed by mouse position, is near the location of the machine in the scene. In this case the machine
+        //is above -1 and below 2 in the y coordinates of the scene.
+        bool isAmberNearMachineY = amberLocation.y > -1 && amberLocation.y < 2;
 
         //if bool statement is true, change the colour of the detector to green, if not, change it to red.
-        if (isAmberNearMachine)
+        if (isAmberNearMachineX && isAmberNearMachineY)
         {
             //changes colour of the sprite to green.
-            spriteRenderer.color = Color.green;
+            detectRenderer.color = Color.green;
         }
         else
         {
             //changes the colour of the sprite to red.
-            spriteRenderer.color = Color.red;
+            detectRenderer.color = Color.red;
         }
     }
 }
