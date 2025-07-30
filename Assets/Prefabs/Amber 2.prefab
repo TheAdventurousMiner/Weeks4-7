@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 6296916090773087544}
   - component: {fileID: 5005472255480119269}
   m_Layer: 0
-  m_Name: Amber
+  m_Name: Amber 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,5 +777,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803a2ef62678fee4f958be1dd9e38a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinoEgg: {fileID: 799956160918272308, guid: 85819e62724164941ba292127f173475, type: 3}
-  displayEgg: {fileID: 2253737079362258246, guid: 6baf528c23102e44da759a2391e8297a, type: 3}
+  dinoEgg: {fileID: 799956160918272308, guid: 4489b0dcf01efcd4398c08d593fe7ffc, type: 3}

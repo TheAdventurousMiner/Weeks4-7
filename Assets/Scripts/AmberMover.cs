@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AmberMover : MonoBehaviour
 {
+    public GameObject dinoEgg;
+   
     // Start is called before the first frame update
     void Start()
     {
-
+      
     }
 
     // Update is called once per frame
@@ -21,5 +24,19 @@ public class AmberMover : MonoBehaviour
         amberFollow.z = 0f;
         //assign the new Vector 3 to transform.position
         transform.position = amberFollow;
+
+        bool isAmberNearMachineX = amberFollow.x > -0.3 && amberFollow.x < 3;
+        //use bool statement to run the code if the amber, followed by mouse position, is near the location of the machine in the scene. In this case the machine
+        //is above -1 and below 2 in the y coordinates of the scene.
+        bool isAmberNearMachineY = amberFollow.y > -1 && amberFollow.y < 2;
+
+        //if bool statement is true, change the colour of the detector to green, if not, change it to red.
+        if (isAmberNearMachineX && isAmberNearMachineY && Input.GetKey(KeyCode.Space))
+        {
+            Vector3 spawnEgg = new Vector3(7.2f, 1.85f, 0f);
+            Instantiate(dinoEgg, spawnEgg, Quaternion.identity);
+            Destroy(gameObject, 5);
+        }
+
     }
 }
