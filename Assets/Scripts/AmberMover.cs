@@ -35,7 +35,7 @@ public class AmberMover : MonoBehaviour
         {
             Vector3 spawnEgg = new Vector3(7.2f, 1.85f, 0f);
             Instantiate(dinoEgg, spawnEgg, Quaternion.identity);
-            Destroy(gameObject, 5);
+            Destroy(gameObject, 3);
         }
 
     }
