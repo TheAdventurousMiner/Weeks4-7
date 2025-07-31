@@ -17,13 +17,16 @@ public class AmberDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //create a new Vector3 to access the mouse position (Input.mousePosition) in the world space (ScreenToWorldPoint) within the main camera (Camera.main)
+        //create a new Vector3 to access the mouse position (Input.mousePosition)
+        //in the world space (ScreenToWorldPoint) within the main camera (Camera.main)
         Vector3 amberLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        //use bool statement to run the code if the amber, followed by mouse position, is near the location of the machine in the scene. In this case the machine
+        //use bool statement to run the code if the mouse position
+        //is near the location of the machine in the scene. In this case the machine
         //is past -0.3 and behind 3 in the x coordinates of the scene.
         bool isAmberNearMachineX = amberLocation.x > -0.3 && amberLocation.x < 3;
-        //use bool statement to run the code if the amber, followed by mouse position, is near the location of the machine in the scene. In this case the machine
+        //use bool statement to run the code if the mouse position
+        //is near the location of the machine in the scene. In this case the machine
         //is above -1 and below 2 in the y coordinates of the scene.
         bool isAmberNearMachineY = amberLocation.y > -1 && amberLocation.y < 2;
 

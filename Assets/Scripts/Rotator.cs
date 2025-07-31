@@ -13,16 +13,19 @@ public class Rotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 newRotation = transform.eulerAngles;
-       // newRotation.z += 1f;
-        //transform.eulerAngles = newRotation;
+       
 
     }
+    //Create a new public void for the slider to get access to it
     public void rotationValue()
     {
-        
+        //create a new Vector3 variable that handles the object's rotation 
+        //using eulerAngles
         Vector3 newRotation = transform.eulerAngles;
+        //rotate the object along the z coordinate since we're using 2D
+        //and increase the rotaion by 1
         newRotation.z += 1f;
+        //assign the new rotation to the object's rotation
         transform.eulerAngles = newRotation;
 
     }
